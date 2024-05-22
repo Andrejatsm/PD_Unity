@@ -12,6 +12,9 @@ public class ImageScriptts : MonoBehaviour
     public GameObject imageHolders;
     public GameObject imageHolderss;
     public GameObject imageHoldersss;
+    public GameObject WidthSlider;
+    public GameObject HeightSlider;
+    public GameObject imageholder;
 
     public void changeImag(int index)
     {
@@ -45,6 +48,13 @@ public class ImageScriptts : MonoBehaviour
 
         else if (index == 2)
             imageHoldersss.GetComponent<Image>().sprite = spriteArraysss[2];
+    }
+    public void ChangeSize()
+    {
+        float sizeH = HeightSlider.GetComponent<Slider>().value;
+        float sizeW = WidthSlider.GetComponent<Slider>().value;
+        imageholder.transform.localScale = new Vector3(1.0f * sizeH, 1.0f * sizeW, 1);
+
     }
 
 

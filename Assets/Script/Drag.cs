@@ -2,15 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Drag : MonoBehaviour, IPointerDownHandler, IBeginDragHandler , IEndDragHandler, IDragHandler
 {
     private RectTransform rTransform;
+    private Vector2 ogtransform;
     public Canvas canv;
+
+    public GameObject target;
 
     private void Start()
     {
         rTransform = GetComponent<RectTransform>();
+        ogtransform = rTransform.position;
     }
 
     public void OnPointerDown(PointerEventData data)
@@ -36,6 +41,12 @@ public class Drag : MonoBehaviour, IPointerDownHandler, IBeginDragHandler , IEnd
 
     public void OnEndDrag(PointerEventData data)
     {
+        if (GetComponent<BoxCollider2D>().bounds.Intersects(target.GetComponent<BoxCollider2D>().bounds))
+        {
+            target.GetComponent<Image>().sprite = GetComponent<Image>().sprite;
+        }
+
+        rTransform.position = ogtransform;
         Debug.Log("Objekts atlaists.");
     }
 
