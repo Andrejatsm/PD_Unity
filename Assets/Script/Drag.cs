@@ -11,6 +11,8 @@ public class Drag : MonoBehaviour, IPointerDownHandler, IBeginDragHandler , IEnd
     public Canvas canv;
 
     public GameObject target;
+    public GameObject targets;
+    public GameObject targets2;
 
     private void Start()
     {
@@ -44,7 +46,10 @@ public class Drag : MonoBehaviour, IPointerDownHandler, IBeginDragHandler , IEnd
         if (GetComponent<BoxCollider2D>().bounds.Intersects(target.GetComponent<BoxCollider2D>().bounds))
         {
             target.GetComponent<Image>().sprite = GetComponent<Image>().sprite;
+            target.GetComponent<Image>().color = Color.white;
         }
+        
+
 
         rTransform.position = ogtransform;
         Debug.Log("Objekts atlaists.");
