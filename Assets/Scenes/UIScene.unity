@@ -3192,9 +3192,9 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Bikses
       m_Image: {fileID: 0}
-    - m_Text: Kurpes
+    - m_Text: Cepures
       m_Image: {fileID: 0}
-    - m_Text: Cepure
+    - m_Text: "Kurpes(nav v\u0113l)"
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
